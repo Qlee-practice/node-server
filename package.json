@@ -13,7 +13,6 @@
   "dependencies": {
     "babel-register": "^6.24.1",
     "bluebird": "^3.5.0",
-    "glob-all": "^3.1.0",
     "koa": "^2.2.0",
     "koa-router": "next",
     "mysql": "^2.13.0",
