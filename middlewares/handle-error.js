@@ -9,7 +9,6 @@ const errorToJson = e => {
   return {message: e.message, type: e.type};
 };
 
-
 const statusMap = {
   [SequelizeError]: 403,
   [SequelizeValidationError]: 400,
@@ -20,7 +19,6 @@ export default async(ctx, next) => {
   try {
     await next();
   } catch (e) {
-    console.log('error name', e.name);
     ctx.status = statusMap[e.name] || 500;
     ctx.body = errorToJson(e);
   }
