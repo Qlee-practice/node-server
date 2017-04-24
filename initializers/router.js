@@ -1,3 +1,5 @@
+"use strict";
+
 import Router from 'koa-router';
 import matchFiles from '../utils/match-files';
 import path from 'path';
@@ -9,6 +11,7 @@ export default async(app) => {
   const files = await matchFiles(pwd, /\.js$/);
 
   files.forEach(file => {
+    console.log('file -->', file);
     const {method, path, action} = require(file);
     router[method.toLowerCase()](path, action);
   });
